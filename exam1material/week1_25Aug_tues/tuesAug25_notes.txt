@@ -1,0 +1,408 @@
+CIS 301. Logical Foundations of Programming.
+
+Julie Thornton.
+
+What is this class?
+- logical reasoning (basics, puzzles)
+- writing formal statements (propositional and predicate logic)
+- proofs (why?)
+- reasoning about code
+    - analyzing what we know
+    - identifying equivalent programs
+    - simplifying programs
+    - formally describing what programs do
+- basics of proving correctness of programs (why?)
+
+
+Syllabus
+
+Canvas setup - weekly class material
+
+Ed Discussion
+
+How to take notes
+
+Attendance/practice quizzes
+
+
+///////////////////////////////////////////////////////
+
+HW 0 - due Thursday, January 22
+    --> see how to do it
+
+HW 1 - due Tuesday, January 27
+
+////////////////////////////////////////////////////////
+
+Taking a step back...what is logic?
+
+- analysis of an argument according to a set of rules
+- given a set of premises (and sometimes a conclusion)
+
+
+- a VALID conclusion is one that is always true
+    anytime all the premises are true
+
+
+Note that the premises might make no sense!
+
+
+////////////////////////////////////////////////////////
+
+Premise 1: If a person wears a red shirt,
+    then they don't like pizza.
+
+Premise 2: Fred is wearing a red shirt.
+
+Conclusion: Fred doesn't like pizza.
+
+
+
+--> Is this a valid argument? yes, but we are assuming Fred is a person
+
+
+
+(is there a hidden assumption we're making about Fred?)
+
+
+
+
+
+////////////////////////////////////////////////////////
+
+Logical Arguments with "OR"
+    - can be ambiguous! Why? exclusive vs inclusive
+
+
+I order fries or I order chips.
+
+
+
+- in English, how do we interpret "or"? exclusive
+
+
+
+- in programming? || is inclusive
+
+
+
+
+"Or" in THIS class: assume inclusive
+
+
+
+Mean exclusive: first or second, but not both
+
+/////////////////////////////
+
+Premise 1: I'll fold the laundry or I'll do the dishes.
+Premise 2: I don't fold the laundry.
+
+--> What can I conclude? I'll do the dishes
+
+
+
+
+//////////////////////////////////////////////////////////
+
+num = 5;
+if (num < 4 || x >= 10) {
+    statement;
+}
+
+
+
+
+
+Suppose we know "statement" is executed
+--> What can we conclude? 
+
+x >= 10
+
+
+
+
+/////////////////////////////////////////////////////////
+
+x = 9;
+if (num < 4 || x >= 10) {
+    if (num > 2) {
+        statement;
+    }
+}
+
+
+
+Suppose we know "statement" is executed
+--> What can we conclude?  both conditions must be true
+
+from outer if, num < 4
+from inner if, num > 2
+
+we know 2 < num < 4. If num is an int, num must be 3.
+
+
+
+
+
+////////////////////////////////////////////////////////
+
+What rule are we seeing with an "or" statement,
+where we know that one of the statements is NOT true?
+
+the other side is
+
+
+
+////////////////////////////////////////////////////////
+
+Logical Arguments with "IF/THEN" (aka "implies" -> )
+
+If it is raining, then I will get wet.
+It is raining.
+
+--> What can I conclude? 
+I will get wet
+
+
+
+How to write with -> symbol?
+    p: It is raining
+    q: I will get wet
+
+    p -> q
+
+
+////////////////////////////////////////////////////////
+
+When we have an "if/then" statement,
+and we know that the "if" part is true?
+
+    ...what can we always conclude?
+
+the then part is true
+
+
+
+/////////////////////////////////////////////////////////
+
+If I don't hear my alarm, then I will be late for class.
+I am late for class.
+
+--> What can I conclude? nothing. I might be late for many reasons -
+    maybe I heard my alarm, but got stuck in traffic on the way to class
+
+
+
+
+
+
+/////////////////////////////////////////////////////////
+
+If I don't hear my alarm, then I will be late for class.
+I hear my alarm.
+
+--> What can I conclude? nothing
+
+might turn off alarm, go back to sleep
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////
+
+If I don't hear my alarm, then I will be late for class.
+I'm not late for class.
+
+--> What can I conclude? I heard my alarm
+
+if I didn't, I would be late, but this contradicts with my not being late.
+
+
+
+
+
+
+is equivalent to (called the contrapositive):
+
+If p Then q     is equivalent to    If not q Then not p
+
+
+
+
+
+
+if (condition) {
+    statement
+}
+
+--> what if we know statement is NOT executed? 
+
+
+
+
+If p Then q
+
+
+
+////////////////////////////////////////////////////////
+
+More if/then logic in programming.
+
+
+if (num < 4 || x >= 10) {
+
+    y = 17;
+}
+
+--> suppose y is 17 here. What do we know?
+
+can't conclude anything. y might have been 17 before the if statement.
+
+
+/////////////////////////////////////////////////////////
+
+y = 10;
+if (num < 4 || x >= 10) {
+
+    y = 17;
+}
+
+--> suppose y is 17 here. Can we conclude anything now?
+
+num < 4 || x >= 10. If statement must have been true since it's the only
+way y could have changed from 10 to 17.
+
+
+
+//////////////////////////////////////////////////////////
+
+if (num < 4 || x >= 10) {
+
+    y = 17;
+}
+
+--> suppose y is NOT 17 here. What do we know?
+
+num < 4 || x >= 10 must have been false
+both parts of the or would have to be false
+
+num >= 4 AND x < 10
+
+
+
+if (!(num < 4 || x >= 10))
+
+
+is equivalent to:
+
+if (num >= 4 && x < 10)
+
+
+DeMorgan's law
+
+///////////////////////////////////////////////////////
+
+Attendance/practice quiz in Canvas
+
+
+///////////////////////////////////////////////////////
+
+Logic puzzles.
+
+The puzzles in this lecture are from or inspired by:
+"What is the Name of This Book?", by Raymond Smullyan
+
+///////////////////////////////////////////////////////
+
+The island of Knights and Knaves.
+Each inhabitant is either a knight or a knave.
+
+Knights ALWAYS tell the truth, and knaves ALWAYS lie.
+
+///////////////////////////////////////////////////////
+
+Who can say, "I'm a knave"?  
+
+Can a knight? no, would be a lie
+Can a knave? no. would be the truth
+
+
+
+//////////////////////////////////////////////////////////
+
+You see two inhabitants, Eve and Fred.
+
+Eve says, "I am a knave or Fred is a knight."
+
+
+
+What are Eve and Fred? 
+
+Suppose Eve is a knight. Then Fred must be a knight in order for her 
+    full statement to be true. 
+
+Suppose instead Even is a knave. This isn't possible for a knave -
+    her statement must be true.
+
+They are both knights.
+
+
+(what does the "or" mean?)  inclusive
+
+
+Her WHOLE statement is the or
+
+/////////////////////////////////////////////////////////
+
+You see two different inhabitants, Ava and Bob.
+
+Ava says that Bob is a knave.
+Bob says, "Neither Ava nor I are knaves."
+
+Rewrite Bob:
+
+Bob: NOT(Ava is knave or I'm knave)
+    equivalent to: Ava not a knave AND I'm not a knave
+    equivalent to: Ava is a knight AND I'm a knight
+
+
+What are Ava and Bob? Ava knight, Bob knave
+
+Suppose Ava is a knight. Then Bob must be a knave. This works
+    with Bob's statement, since it would correctly be false (as 
+    he would not be a knight)
+
+Suppose instead Ava is a knave. From her statement, Bob must be a knight.
+    Bob's statement would incorrectly be false, as Ava is not a knight.
+    Not possible.
+
+
+
+
+
+
+
+
+What does "neither" mean?
+
+
+
+
+////////////////////////////////////////////////////////
+
+Homework 0: due Thursday, January 22
+    - get Sireum + GitHub ready (do this now!)
+    - post something in Ed Discussion
+    - come to office hours or post in Ed Discussion if
+        you need software setup help!
+
+Homework 1: due Tuesday, January 27
+    - first page of homework is logical reasoning
+        (what we did today)
+    - second page is logic puzzles
+
+Next: finish logic puzzles, start truth tables
