@@ -1,0 +1,1 @@
+This folder contains the solutions for each homework assignment in CIS 301, organized by homework number (e.g., the "hw1" folder contains the solutions for Homework 1). It will be updated throughout the semester as new homework assignments are due.
