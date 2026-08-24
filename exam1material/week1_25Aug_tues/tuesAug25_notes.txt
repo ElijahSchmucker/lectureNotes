@@ -14,7 +14,26 @@ What is this class?
 - basics of proving correctness of programs (why?)
 
 
-Syllabus
+////////////////////////////////////////////////////////
+
+Syllabus.
+-> office hours
+-> getting help
+    extra credit: bug bounty, helping hand
+-> graded work weights/categories
+
+
+
+Policies.
+-> homework
+-> exams
+-> attendance
+
+
+Course calendar.
+
+
+////////////////////////////////////////////////////////
 
 Canvas setup - weekly class material
 
@@ -71,7 +90,7 @@ Conclusion: Fred doesn't like pizza.
 ////////////////////////////////////////////////////////
 
 Logical Arguments with "OR"
-    - can be ambiguous! Why? exclusive vs inclusive
+    - can be ambiguous! Why? 
 
 
 I order fries or I order chips.
@@ -325,8 +344,9 @@ What are Ava and Bob?
 
 ////////////////////////////////////////////////////////
 
-Homework 0: due Thursday, August 27
-    - get Sireum + GitHub ready (do this now!)
+Homework 0: due Thursday, August 27 (do early to avoid tech troubles)
+    - submit GitHub username to get homework repository (do ASAP!) 
+    - get Sireum ready
     - post something in Ed Discussion
     - come to office hours or post in Ed Discussion if
         you need software setup help!
