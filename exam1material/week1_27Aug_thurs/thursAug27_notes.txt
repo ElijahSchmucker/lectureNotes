@@ -44,7 +44,10 @@ else {
 
 
 --> is it possible for "statements2" to execute?7
+first if condition has to be false and the first else if condition has to be true for statements2
+to execute.
 
+cannot happen since y values aren't possible
 
 
 
@@ -63,12 +66,18 @@ Bob says, "Neither Ava nor I are knaves."
 
 
 What does "neither" mean?
-
+both have to be false
 
 Rewrite Bob:
-
+Ava is not a knave and I am not a knave
+we are both knights
 
 What are Ava and Bob? 
+if Ava is a knave then bob would have to be a knight. 
+does not work out since Bob's statement would be false.
+
+Ava: knight
+Bob: Knave
 
 
 ////////////////////////////////////////////////////////
@@ -83,7 +92,17 @@ What types are Sarah, Bill, and Mae?
 
 
 (How might we simplify everything?)
+Sarah: Bill is a knight
+Bill: Mae is a knight
+Mae: 
 
+Suppose Sarah is a knight
+    Bill must be a knight and Mae must be a knight
+    Mae's statement doesn't work since Bill would be lying.
+Suppose Sarah is a knave.
+    Sarah: knave
+    Bill: knave
+    Mae: knave
 
     
 
@@ -100,7 +119,21 @@ On Sunday, everyone tells the truth.
 Lion says: "Yesterday was one of my lying days."
 Unicorn says: "Yesterday was one of my lying days, too."
 
-What day is it?
+What day is it? 7 Possibilities
+    Consider Sunday-Both tell the truth.
+    not possible since they never lie on the same day, and on sunday they should both tell the truth.
+    Consider Tuesday-Lion lies Unicorn tells truth.
+        does not work since Yesterday lion was lying.
+    Fridays/Wednesdays/Saturdays don't work as well.
+    Mondays-Lion lies unicorn tells the truth. does not work
+
+    Thursday-Unicorn is lying and Lion is telling the truth.
+        Unicorn is lying and Lion is telling the truth.
+        Works out.
+
+    Day: Thursday
+
+
 
 
 
@@ -121,7 +154,8 @@ The second one says: "I'm Tweedledee."
 
 Which is which? What day is it?
 
-
+Sunday because it cant be a day when one lies and one tells the truth since they would both give
+the same name so they are who they say they are.
 
 
 
@@ -150,9 +184,20 @@ You don't know what day it is, but are sure that it isn’t
 The first one says: "Tweedledee owns the rattle."
 The second one says: "I'm Tweedledee!"
 
-Who gets the rattle?
+Case
+    Suppose the first twin is telling the truth
+    Second twin must be lying.
+Case
+    First twin is lying
+    Tweedledum owns the rattle
+    Second twin is telling the truth.
+    first twin is tweedledum 
+    we give the rattle to the first twin
 
+Who gets the rattle?
+    we give the rattle to the first twin
 Who is who?
+    Not enough information
 
 
 ///////////////////////////////////////////
@@ -169,8 +214,24 @@ Gold casket: "The portrait is in this casket."
 Silver casket: "The portrait is not in this casket."
 Lead casket: "The portrait is not in the gold casket."
 
-Where is the portrait?
 
+They could all be false or could be one message true
+
+Case
+    In the gold casket.
+    Gold is telling the truth
+    Silver is telling the truth
+    not work
+Case    
+    Silver casket
+    Gold-false
+    silver false
+    Works
+Case: Lead casket
+    Gold(F) Lead(T) (Silver)(true)
+
+Where is the portrait?
+    in the silver casket.
 
 
 
@@ -199,15 +260,22 @@ Cheryl privately tells Bernard her birthday day (number).
 
 Albert says: "I don't know when Cheryl's birthday is,
     but I know Bernard doesn't know too."
+    must be a month with no unique days(No may or june)
+    Bernard now knows when Cheryls birthday is
 
 Bernard says: "At first I didn't know when Cheryl's
     birthday is, but now I do."
+    Can't be a non repeating day or Bernard wouldn't be sure
 
 
 Albert says: "Then I also know when Cheryl's birthday is."
+Cant be august since two days remaining.
+
+Works out to july
 
 
 When is it?
+July 16
 
 
 
