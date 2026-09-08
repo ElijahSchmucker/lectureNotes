@@ -215,18 +215,18 @@ q: I can drive a car
 
 1) If I am at least 16 years old, then I can drive a car.
 
-
+p → q
 
 
 2) If I can drive a car, then I am at least 16 years old.
-
+q → p
 
 
 --> are they saying the same thing?
-
+no
 
 --> could we PROVE our answer?
-
+yes find one statement where they do not match
 
 //////////////////////////////////
 
@@ -234,10 +234,11 @@ Summary of equivalence.
 
 How do we prove two statements ARE equivalent?
 
-
+complete two truth tables that demonstrate that for each truth assignment
+the statements have the same output
 
 How do we prove two statements are NOT equivalent?
-
+find one truth assigment where they have different outputs.
 
 
 
@@ -262,7 +263,7 @@ if (a == 4 || a == 5) {
 How could we express the NEGATION
 (i.e., what condition would be true for the "else")?
 
-
+if(a != 4 && b!= 5)
 
 ///
 
@@ -280,11 +281,10 @@ How could we express the NEGATION
 
 DeMorgan's laws in propositional logic:
 
-¬(p ∨ q) is equivalent to... 
+¬(p ∨ q) is equivalent to... -p and -q
 
 
-
-¬(p ∧ q) is equivalent to... 
+¬(p ∧ q) is equivalent to...  -p or -q
 
 
 ////////////////////////
@@ -292,7 +292,7 @@ DeMorgan's laws in propositional logic:
 --> how can we prove the first of DeMorgan's laws?
 (demorgan1.logika and demorgan2.logika)
 
-
+equivalent because every possible set of inputs gives the same output for both statements.
 
 
 

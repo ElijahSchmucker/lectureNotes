@@ -17,6 +17,7 @@ Negate this if-statement:
 if ((y >= 4 || num != 14) && x > 0) {
     statements
 }
+if(!(y < 4 && num == 14) || x <= 0) 
 
 
 
@@ -37,14 +38,19 @@ Satisfiability.
 - is this satisfiable?
 
     (p ∨ ¬q) ∧ (q ∨ ¬r) ∧ (r ∨ ¬p)
+p: T
 
+q: T
 
+r: T
 
+This makes the entire statement true
 to show a statement is satisifiable: 
-
+Just need one truth assigment to make it true
 
 to show a statement is NOT satisfiable: 
-
+Show every single truth assignment makes it false
+classify it as contradictory.
 
 ////////////////////////////////
 ∧ ∨ ¬ →
@@ -68,6 +74,12 @@ An argument is of the form:
 
 --> When is an argument considered valid?
 
+    not invalid
+    every truth assignment that made all the premses true.
+
+
+an arguement is considered invalid if a promise is broken
+
 
 
 
@@ -78,9 +90,13 @@ Proofs with truth tables.
 Suppose we know:
 
     - I am in the CS dept or I am in the ECE dept
+        p ∨ q
     - I am not in the ECE dept
+        ¬q
+
     - I can log in to the CS lab computers if
         I am in the CS dept
+        p → r
 
 I want to prove:
 
@@ -91,15 +107,25 @@ I want to prove:
 
 
 Propositional atoms:
-
+p: I am in the CS department
+q: I am in the ECE department
+r: I can log into the lab computers
 
 
 Translations:
+premises
+p: I am in the CS department
+q: I am in the ECE department
+r: I can log into the lab computers
+
 
 
 
 --> How to prove with a truth table?
-
+premises: 
+p → r 
+¬q
+p ∨ q
 
 
 
