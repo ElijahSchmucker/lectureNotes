@@ -20,8 +20,18 @@ if ((y >= 4 || num != 14) && x > 0) {
 if(!(y < 4 && num == 14) || x <= 0) 
 
 
+if (!((y >= 4 || num != 14) && x > 0)) 
+if (!(y >= 4 || num != 14) || x <= 0) 
+
+Answer:
+if ((y < 4 && num == 14) || x <= 0) 
 
 //////////////////////////
+
+truth tables classification:
+    contingent - mix of true and false
+    contradictory - always false
+    tautology - always true
 
 Satisfiability.
 
@@ -31,6 +41,8 @@ Satisfiability.
 
 
 - what kind of statement is satisfiable? what kind is not?
+    satisfiable: tautology, contingent
+    not satisfiable: contradictory
 
 
 
@@ -40,17 +52,14 @@ Satisfiability.
     (p ∨ ¬q) ∧ (q ∨ ¬r) ∧ (r ∨ ¬p)
 p: T
 
-q: T
 
-r: T
 
 This makes the entire statement true
 to show a statement is satisifiable: 
-Just need one truth assigment to make it true
+
 
 to show a statement is NOT satisfiable: 
-Show every single truth assignment makes it false
-classify it as contradictory.
+
 
 ////////////////////////////////
 ∧ ∨ ¬ →
@@ -70,15 +79,15 @@ An argument is of the form:
     IF all the premises really are true, 
     THEN the conclusion is true
 
+premise1 ∧ premise2 ∧ ... ∧ premiseN → conclusion 
 
+--> when is an argument invalid?
+    promise broken
+    all premises are true
+    but conclusion is false
+    considered invalid if this EVER happens for any truth assignment
 
 --> When is an argument considered valid?
-
-    not invalid
-    every truth assignment that made all the premses true.
-
-
-an arguement is considered invalid if a promise is broken
 
 
 
@@ -105,11 +114,8 @@ I want to prove:
 
 --> How would we translate to propositional logic?
 
-
 Propositional atoms:
-p: I am in the CS department
-q: I am in the ECE department
-r: I can log into the lab computers
+
 
 
 Translations:
@@ -119,15 +125,30 @@ q: I am in the ECE department
 r: I can log into the lab computers
 
 
+Premises:
+    - I am in the CS dept or I am in the ECE dept
+        p ∨ q
 
+    - I am not in the ECE dept
+        ¬q    
+
+    - I can log in to the CS lab computers if
+        I am in the CS dept
+        p → r
+
+
+Conclusion:     - I can log in to the CS lab computers
+        and I am in the CS dept
+
+        r ∧ p
 
 --> How to prove with a truth table?
-premises: 
-p → r 
-¬q
-p ∨ q
 
 
+Conclusion: r ∧ p
+
+valid: every truth assignment that made all premises true
+    also made conclusion true 
 
 ////////////////////////////////
 ∧ ∨ ¬ →
@@ -171,6 +192,9 @@ We wish to prove:
 
 When is an argument invalid?
 
+we can find a truth assignment where all premises are true
+but the conclusion is false 
+
 we can find a truth assignment where all truth assignments are true but the output is false.
 
 
@@ -187,25 +211,14 @@ Proposed conclusion:
     
 
 1) Translate to propositional logic
-p: Chipotle raises their prices
 
-q: You stop eating at Chipotle
-
-premise: 
-    p → q , ¬p
-    conclusion q
-
-
-
-
-
+Premises: p → q, ¬p
+Conclusion: q
 
 
 2) How can we show it is invalid?
+ ONE truth assignment where all premises true, conclusion false
 
-one truth assignment where all premises true, conclusion false.
-p: F    
-q: F
 
 makes both premises true but the conclusion false.
 ////////////////////////////////
@@ -224,13 +237,15 @@ Showing arguments are invalid in Logika
 
 Does it matter if the conclusion is true when 
     the premises aren't?
-It does not matter one bit.
+
 
 Does it matter if one premise is true when the other isn't?
-No 
+
 Does it matter if the conclusion is false when some 
     (but not all) of the premises are true?
     NO it does not matter one bit
+
+    doesn't matter 
 
 ////////////////////////////
 
@@ -296,7 +311,7 @@ AND rules idea.
 
 
    --> in what situations do you think we could do that?
-        if I already had that P was true and I already had that Q was true
+
 
 
 
@@ -304,8 +319,7 @@ AND rules idea.
 2) What if we already had an AND statement like  P ∧ Q.
 
     --> what new claims would make sense using that statement?
-        P is true
-        Q is true.
+
 
 
 
@@ -359,7 +373,11 @@ What could we claim with AndI?
 
 
 
+//////////////////////////////////
+∧ ∨ ¬ →
+//////////////////////////////////
 
+<-- stopped here, will continue on Thursday
 
 //////////////////////////////////
 
