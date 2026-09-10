@@ -171,7 +171,7 @@ We wish to prove:
 
 When is an argument invalid?
 
-
+we can find a truth assignment where all truth assignments are true but the output is false.
 
 
 Example (from HW 1):
@@ -187,6 +187,15 @@ Proposed conclusion:
     
 
 1) Translate to propositional logic
+p: Chipotle raises their prices
+
+q: You stop eating at Chipotle
+
+premise: 
+    p → q , ¬p
+    conclusion q
+
+
 
 
 
@@ -194,9 +203,11 @@ Proposed conclusion:
 
 2) How can we show it is invalid?
 
+one truth assignment where all premises true, conclusion false.
+p: F    
+q: F
 
-
-
+makes both premises true but the conclusion false.
 ////////////////////////////////
 
 ∧ ∨ ¬ →
@@ -213,18 +224,19 @@ Showing arguments are invalid in Logika
 
 Does it matter if the conclusion is true when 
     the premises aren't?
-
+It does not matter one bit.
 
 Does it matter if one premise is true when the other isn't?
-
+No 
 Does it matter if the conclusion is false when some 
     (but not all) of the premises are true?
+    NO it does not matter one bit
 
 ////////////////////////////
 
 Downside of proofs with truth tables?
 
-
+truth tables with more variables get much worse to do.
 
 
 
@@ -284,7 +296,7 @@ AND rules idea.
 
 
    --> in what situations do you think we could do that?
-
+        if I already had that P was true and I already had that Q was true
 
 
 
@@ -292,7 +304,8 @@ AND rules idea.
 2) What if we already had an AND statement like  P ∧ Q.
 
     --> what new claims would make sense using that statement?
-
+        P is true
+        Q is true.
 
 
 
