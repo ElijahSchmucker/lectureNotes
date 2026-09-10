@@ -36,7 +36,10 @@ Justifications so far:
     AndI(lhsNum, rhsNum)
 
     AndE1(andNum)
-
+        already have an and statement and want to seperate it
+            statement1 ∧ statement2
+        want to seperate it
+        give me statement 1
     AndE2(andNum)
 
 
@@ -97,6 +100,8 @@ Or, could have done:
 (p ∧ q) ⊢ (p ∨ q)
 Proof(
     1 ( p ∧ q   ) by Premise,
+    2 ( p ) AndE1(1),
+    3 (p ∨ q ) OrI1(2),
     
 
 )
@@ -114,7 +119,17 @@ OR elimination
 
 Idea:
 - If an OR statement is true, what do we know?
+    if p || q as a claim
+    at least one of them is true (or both)
+    assume p is the one thats true 
+        ...
+        reach conclusion
+    assume q is the one thats true
+        ...
+        reach same conclusion
 
+    afterwards we can claim that the conclusion is true since it doesnt
+    matter which p or q led to it.
 
 
 
