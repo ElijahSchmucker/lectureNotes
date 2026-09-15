@@ -80,6 +80,8 @@ General proof strategy to this point
 
 1) list premises
 2) break down any premises you can to get extra information
+    AND statement - extract both sides
+    IMPLIES statement
 
 3) look at the conclusion
 
@@ -106,31 +108,45 @@ See Canvas announcement for list of topics.
 
 How to prove two propositional logic statements are 
 equivalent?
+    use two truth tables and look for all the outputs being the same for every 
+    possible input.
+    or use deduction 
 
 
 
 
 How to prove propositional logic statements are 
 NOT equivalent?
-
+    Find One truth assignment where outputs differ.
+    cannot use deduction
 
 What is satisfiability? 
-
+    You can find at least one truth assignment that makes the statement true.
+    dont need a full truth table
 
 To show NOT satisfiable?
+complete a full truth table to show contradictory.
+
+Filling out truth tables
+    Mark top level operators.
+    fill in under each operator.
+    classify it at the bottom
+        contingent - give truth assignment.
 
 
 - Determining whether an argument is valid or invalid
     (what is an argument?)
-
+    argument: set of premises, a conclusion
+    trying to show the premises imply the conclusion
 
     valid: 
 
 
     how prove valid?
-
+        All of the cases where the premises are true the conclusions are true.
 
     how prove invalid?
+    find one truth assignment where all the premises are true but the conclusion is false.
 
 
 
