@@ -10,6 +10,11 @@ import org.sireum.justification.natded.prop._
       Proof(
         1 (  !(!p | !q) ) by Premise,
 
+        2 SubProof(
+          3 Assume (!p),
+          4 (!p | !q) by ORI1(3),
+        )
+
     )
   )
 }

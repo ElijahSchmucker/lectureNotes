@@ -62,33 +62,43 @@ How do we approach proofs?
 3. Look at what you are trying to prove 
     (what do we look for in goal/conclusion?)
 
-    ∧ - 
+    ∧ - Try AndI, think of two sides as seperate proofs
 
-    ∨ -   
+    ∨ -  see if we can get one of the sides then use OrI
+        Often have another Or Statement
 
-    → - 
+    → - Use ImplyI ALWAYS follow implyI pattern
 
-    ¬(something) - 
+    ¬(something) - ALWAYS follow negation introduction.
 
     just a propositional atom? like p.
 
 
-After each claim - 
+
+After each claim - scan previous claims to see if
+    we can extract more information
 
 
 
 Inside a subproof - 
     (What are the different subproofs?)
+        OrE both need same conclusion
+        ImplyI assume LHS end with RHS
+        NegI end with a contradiction
+        PbC ends with a contradiction
 
     --> when do we open a subproof?
 
     --> can we assume anything in a subproof? 
-
+    SubProof(
+        Assume (anything)
+    )
+Always write your goal for the subproof as a note for yourself.
 
 
 
 Doesn't fit a pattern or doesn't work out from above?
-
+PbC
 
 
 When to use BottomE?
@@ -134,14 +144,14 @@ SOUNDNESS and COMPLETENESS of natural deduction in
     "true": demonstrate an argument with truth tables
 
 
-SOUNDNESS: ??
+SOUNDNESS: if all arguements that are provable are actually true.
 
 p ∧ q 
 --------
 p
 
 
-COMPLETENESS: ??
+COMPLETENESS: if all true arguements are provable.
 
 
 
@@ -149,9 +159,10 @@ COMPLETENESS: ??
 
 --> what would it mean if a proof system was unsound?
 
-
+It would mean you could prove untrue things
 
 --> what would it mean if a proof system was incomplete?
+There were true arguments that I didnt have the tools to prove.
 
 
 
@@ -187,9 +198,9 @@ A set is an unordered collection of elements
 
 ∈: is in, exists in
 
-    x ∈ A  means?
+    x ∈ A  means? Element x is an element in set A
 
-    x ∉ A  means?
+    x ∉ A  means? Element x is not an element in set A.
 
 
 
@@ -202,12 +213,12 @@ Example: A = {1,4,7,11,20}
 
 - Common sets in math:
 
-    ℕ: 
-    ℤ: 
-    ℚ: 
-    ℝ: 
-    ℂ: 
-    ∅: 
+    ℕ: Natural numbers (integers 1 and bigger)
+    ℤ: whole numbers (all integers positive and negative)
+    ℚ: Rational number (fractions)
+    ℝ: Real numbers (any number on the number line)
+    ℂ: Complex numbers (can be written as a + bi)
+    ∅: empty set, {}
 
 ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ ⊂ ℂ
 

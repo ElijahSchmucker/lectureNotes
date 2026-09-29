@@ -8,6 +8,16 @@ import org.sireum.justification.natded.prop._
   Deduce(
     |- ( p | !p )
       Proof(
-        
+        1 SubProof(
+          2 Assume (!(p | !p)),
+          3 SubProof(
+            4 Assume (p),
+            5 (p | !p) by OrI(4),
+            6 (F) by NegE(5, 2), 
+          ),
+          7 (!p) by NegI(3),
+          8 (p | !p) 
+        )
+      )  
   )
 }
