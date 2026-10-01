@@ -38,6 +38,8 @@ Describe these sets in set builder notation
 
 {5,10,15}
 
+{x : x = 5k k ∈ ℕ, k <= 3}
+
 
 
 {CIS 115, CIS 116, CIS 200, CIS 300, CIS 301}
@@ -46,11 +48,11 @@ Describe these sets in set builder notation
 
 {2,4,8,16,32}
 
-
+{x : x = 2^k, k ∈ ℕ k <= 5 }
 
 {13, 19, 25, 31, 37, 43}
 
-
+{x : x = 7 + 6k, k ∈ ℕ, k <= 6  }
 
 ///////////////////////////////////////
 ∀ ∃     ∈ ∉     ∅ ⋂ ⋃ ⊂ ⊆   ⋀ ⋁ ¬ →     ℕ ℤ     ≠ ≤ ≥
@@ -60,12 +62,12 @@ Describe these sets in set builder notation
 Set union, ⋃
 
 The union of the sets A and B, written A ⋃ B, is the set
-of all elements....
+of all elements.... that are in at least one of these sets.
 
 
 How could we express in set builder notation?
 
-A ⋃ B = ?
+A ⋃ B = {x : x ∈ A ∈ x ∈ B }
 
 
 Show as a Venn diagram.
@@ -77,12 +79,12 @@ Show as a Venn diagram.
 Set intersection, ⋂
 
 The intersection of the sets A and B, written A ⋂ B, is the set
-of all elements that are...
+of all elements that are...  in both a and b
 
 
 How could we express in set builder notation?
 
-A ⋂ B = ?
+A ⋂ B = {x : x ∈ A ∈ ⋀ x ∈ B }
 
 
 Show as a Venn diagram.
@@ -94,12 +96,12 @@ Set difference, -
 / or \ (means the same thing)
 
 The difference between the sets A and B, written A - B, 
-    is the set of all elements...
+    is the set of all elements...  In A but not in B
 
 
 How could we express in set builder notation?
 
-A - B = ?
+A - B = {x : x ∈ A ∈ ⋀ x ∉ B }
 
 
 Show as a Venn diagram.
@@ -113,10 +115,10 @@ B = {2,3,4,5,6,7}
 
 Find:
 
-A ⋃ B = ?
-A ⋂ B = ?
-A - B = ?
-B - A = ?
+A ⋃ B = {1, 2, 3, 7}
+A ⋂ B = {3, 7}
+A - B = {1,10,11,12}
+B - A = {2,4,5,6}
 
 
 /////////////////
@@ -138,12 +140,12 @@ How does A - B relate to A ⋂ B?
 
 
 What do we know if A ⋂ B = A ⋃ B?
-
+A = B
 
 
 
 What do we know if A - B = A?
-
+The intersection is empty
 
 
 
@@ -169,6 +171,7 @@ A = {1,3,4}
 B = {1,3,5,8}
 
 --> is A a subset of B? 
+no because the four is in a but not in b
 
 
 
@@ -180,7 +183,7 @@ A = {8,1,3}
 B = {1,3,5,8}
 
 --> is A a subset of B? 
-
+Yes because all the elements in A are in B
 
 //////////////////////////////////
 
@@ -192,9 +195,10 @@ B = {1,3,5,8}
 
 Quantifiers - helps describe all or some elements in a set
 
-    ∀ - ?
+    ∀ - Universal quantifier, "for all"
+        Describing something about all elements in a set.
 
-    ∃ - ?
+    ∃ - ? "Some", at least one
 
 
 
@@ -239,19 +243,21 @@ Example:
 
 A = {x : x ∈ ℕ ⋀ x^2 ≥ 25 }
 
+5
 
 
 
-P(x) = ?
+
+P(x) = x ∈ ℕ ⋀ x^2 ≥ 25 
 
 What are these saying? Are they true?
 
-P(2) = 
-P(-6) =  
-P(10) = 
+P(2) = false
+P(-6) =  false
+P(10) = true
 
 
-
+Mean 10 is in the set 2, -6 are not in the set.
 
 
 //////////////////////////////////////
@@ -270,6 +276,10 @@ Conclusion
 How would we prove this in propositional logic?
 
 What propositional atoms? What sequent?
+   P: All humans are mortal.
+   q: Socrates is human.
+
+   p, q |- r
 
 
 
@@ -283,12 +293,15 @@ individuals in a domain (a set)
 
 
 These claims will involve predicates and quantifiers
-
+domain : all living things
 Human(x)
 Mortal(x)
 
 
 ∀ x (Human(x) → Mortal(x))
+for all living things if that living thing is human then it is mortal.
+
+All humans are mortal
 
 //////////////////
 
@@ -304,6 +317,7 @@ Example:
 
 
     What is the value of C(Bob) ⋀ ¬C(Jill)? 
+    true.
 
 
 ////////////////
@@ -321,22 +335,24 @@ Wings(x): x has wings
 Carnivore(x): x is a carnivore
 
 
-Mammal(bat) -  ?
-Bird(bat) - ?
-Fish(bat) - ?
-Wings(bat) - ?
-Carnivore(bat)
+Mammal(bat) -  true
+Bird(bat) - no
+Fish(bat) - no
+Wings(bat) - yes
+Carnivore(bat) - true
 
 Write each statement in English. Is each one true or false?
 
 ∀ x (Mammal(x))
+All animals in my domain are mammals.
 
+False a salmon is not a mammal.
 
 
     --> how could we express the same statement in our domain
     WITHOUT a quantifier?
 
-
+Mammal(bat) & Mammal(Lion) *... Mammal(Salmon)
 
 ///
 
@@ -345,20 +361,23 @@ Write each statement in English. Is each one true or false?
     --> how could we express the same statement in our domain
     WITHOUT a quantifier?
 
+There is an animal in our domain that is both a mammal and a carnivore
+True: lion.
 
 
+Mammal(bat) & carnivore(bat) | Mammal(lion) & carnivore(lion)
 ///
 
 ∀ x (Bird(x) ⋀ Wings(x))
 
-
+false- a bat is not a bird
 
 
 ///
 
 ∀ x (Bird(x) → Wings(x))
 
-
+all birds have wings
 
 ///
 
