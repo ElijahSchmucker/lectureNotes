@@ -43,6 +43,7 @@ Write each statement in English. Is each one true or false?
 
 
 ¬(∀ x (Carnivore(x) → Mammal(x)))
+    all carnivores are mammals
 
 
 
@@ -50,6 +51,8 @@ Write each statement in English. Is each one true or false?
 ///
 
 ∀ x ¬Wings(x)
+all animals dont have wings
+false - bat, and falcon have wings
 
 
 
@@ -57,18 +60,25 @@ Write each statement in English. Is each one true or false?
 ///
 
 ¬(∃ x Fish(x))
+   its not the case that some animals are a fish
+   there is an animal that is not a fish
 
+   false- salmon is a fish
 
 
 ///
 
 ∃ x ¬(Fish(x))
+there is an animal that is not a fish
+true-bat
 
 
 
 ///
 
 ¬(∃ x (Mammal(x) ⋀ Wings(x)))
+     there isn't a mammal that has wings
+     false-bat
 
 
 
@@ -76,13 +86,17 @@ Write each statement in English. Is each one true or false?
 ///
 
 ∃ x (Fish(x) → Bird(x))
+there is an animal and if its a fish then it is a bird
+
+
+true because we can find an animal that isn't a fish
 
 
 
 
 /////////////////
 
-For all: usually connect with...
+For all: usually connect with... 
 
 There exists: usually connect with...
 
@@ -106,37 +120,41 @@ Translate to predicate logic and evaluate:
 
 CIS200 is a CS course with a lab
 
+IsCS(CIS200) & HasLab(CIS200)
+
 
 
 //
 
 Not all CS courses have a lab
 
-
+    ¬(∀ x (IsCS(x) → HasLab(x)))
 
 //
 
 There is a non-CS course with a lab
+    ∃ x (¬IsCS(x) ⋀ HasLab(x))
 
+    true physics has a lab
 
 
 //
 
 No math course has a lab
-
+    ∀ x ¬(IsMath(x) → HasLab(x) )
 
 
 //
 
 There is a CS course with more hours than a math course
 
-
+∃ x ∃ y (IsCS(x) ⋀ IsMath(y) ⋀ MoreHours(x, y))
 
 //
 
 There is a CS course with more hours than any math course
 
-
+∃ x ∀ y (IsCS(x) ⋀ IsMath(y) → MoreHours(x, y))
 
 --> Where to put the quantifiers?
 
@@ -152,14 +170,24 @@ What do these mean in English? Are they true?
 
 ∀ n ∃ m (n^2 < m)
 
+for all numbers its square is less then some other number
 
-
+true whatever the square is pick a number one bigger then it.
 
 ∀ x ∃ y (x == y^2)
+
+for all numbers x there is a y squared that is the statement
+all integers are perfect squares
+
+false - 5 is not a perfect square
 
 
 
 ∀ n ∃ m (n^2 == m)
+
+for all numbers, there is a perfect square t
+all perfect squares are integers
+the square of every integer is an integer.
 
 
 
@@ -179,12 +207,14 @@ Write the following in predicate logic (Domain: ℤ):
 ----------------------------------------
 
 The sum of two negative integers is negative
-
+∀ x ∀ y (x < 0 ⋀ y < 0  →  x + y < 0)
 
 
 
 The difference of two positive integers is
 not necessarily positive
+
+∃ x ∃ y (x > 0 ⋀ y > 0 ⋀ x-y < 0)
 
 
 
@@ -266,8 +296,8 @@ Domain: students
 
 All prize-winners were 5th graders
 
-Translation: 
-Negation: 
+Translation: ∀ x (wonPrize(x) → in5th(x) )
+Negation: ∃ x (wonPrize(x) ⋁ ¬in5th(x))
 
 Translation of negation: 
 
