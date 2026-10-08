@@ -18,6 +18,11 @@ import org.sireum.justification.natded.prop._
     )
     Proof(
       1 (∀((x: T) => (P(x) & Q(x)))) by Premise,
+      2 Let ((a: T)) => SubProof(
+        3 (P(a) & Q(a)) by AllE[T](1),
+        4 (P(a)) by AndE1(3)
+      ),
+      5( All((x: T) => P(x))) by AllI[T](2),
 
     )
   )
