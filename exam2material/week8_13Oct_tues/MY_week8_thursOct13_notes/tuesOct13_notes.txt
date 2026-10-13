@@ -32,9 +32,17 @@ Today:
 Reminder:
 
 AllE - when can we use?
+    need a for all statements
+    need an individual of that type
+        might be a parameter to proof function or named in premise
+        might also be inside a subproof.
 
 
 AllI - when do we use? idea?
+    use when we need to introduce a for all statements
+    subproof (a let subproof where we name a random individual a)
+    goal is to get a statement about that individual
+    
 
 ////////////////////////
 
