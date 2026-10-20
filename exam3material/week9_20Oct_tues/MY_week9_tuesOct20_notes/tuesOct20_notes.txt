@@ -41,15 +41,15 @@ Idea: we know a statement is true for *some* individual
 Create an alias for that anonymous individual
 
     Know: ∃ x P(x)
-    Assume? 
+    Assume? P(Alias)
 
-    Goal ?
+    Goal ? reach a conclusion that doesn't rely on the name of the alias
 
 
 
 Example:
     Know: ∃ x (P(x) ^ Q(x) → R(x))
-    Assume? 
+    Assume? P(alias) ^ Q(alias) -> R(alias)
 
 
 
@@ -123,28 +123,33 @@ Proof tactics for predicate logic
 - see if you can do anything right away with the premises
     Which rules? 
 
-        Have an AND? 
-        have an implies at the LHS? 
-        Have a for all and an individual? 
+        Have an AND? split it
+        have an implies at the LHS? get the right with ImplyI
+        Have a for all and an individual? AllE plug them in.
 
 
 - look at top-level operator for what you are trying to prove
     trying to prove a "for all" statement with ∀?
+    use AllI SubProof
 
 
 
     trying to prove a "there exists" statement with ∃?
 
         do I have that statement about a particular individual?
-
+        ExistsI
 
         could I use AllE for an individual with an all statement?
+            use ALLE to make the statement about the individual
+            do existsI
 
 
         do I have a "there exists" statement as a claim?
+            try exists elimination
 
 
         do I have an OR statement as a claim?
+            try OrE, prove the exists in both cases.
 
 
         really can't find anything? 
