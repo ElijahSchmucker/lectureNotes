@@ -59,7 +59,6 @@ that cannot be proved.
 
 /////////////////////
 
-
 Example:
 
 We want to prove that for any positive integer n:
