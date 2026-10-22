@@ -11,20 +11,24 @@ Today:
 Soundness and completeness of predicate logic.
 
 
+comparing arguments that were valid/true 
+against what we could prove with deduction.
+
 Soundness: definition?
+everything we could prove with deduction was actually true/valid
+    propositional logic? yes
 
-    propositional logic?
-
-    predicate logic?
-
-
+    predicate logic? yes
 
 
-Completeness: definition?
 
-    propositional logic?
 
-    predicate logic?
+
+Completeness: definition? we can use deduction to prove all true/valid arguements
+
+    propositional logic?yes
+
+    predicate logic? no
 
 
 
@@ -97,9 +101,10 @@ The induction domino effect:
 
 
 What is this saying?
-    P(1)? 
+    P(1)? the claim is true for n = 1
 
-    ∀ k (P(k) → P(k+1))? 
+    ∀ k (P(k) → P(k+1))? for all k if its for P(k) then its true 
+    for P(k+1)
 
 
 
@@ -110,11 +115,19 @@ Putting it all together:
 English translation?
 
 
-How will we prove P(1)?
+How will we prove P(1)? chose first element in domain
+    show that claim holds for it
+(called the BASE CASE)
 
 
+Inductive step
 How will we prove ∀ k (P(k) → P(k+1))? 
     (How would we prove this for-all statements in predicate logic?)
+    AllI
+    Pick a random individual, k, in my domain
+    ImplyI 
+    Assume P(k) this is called the inductive hypothesis
+    ... try to get P(k+1) 
 
 
 
@@ -131,9 +144,23 @@ We want to prove that for any positive integer n:
     1 + 2 + ... + n = n*(n+1)/2
 
 
+    the above claim is P(n)
+
+
 
 
 Proof by induction.
+
+Base Case. We must prove the claim holds for the first positive integer n 
+n = 1
+
+. we have that the left side of the claim is one and the rights side of the claim is
+1(1 + 1)/2 = 1. the two sides are equal so the base case holds.
+
+Inductive step. We assume the inductive hypothesis - that 
+    1 + 2 + ... + k = k(k+1)/2
+for some fixed positive integer k. We must show that out claim holds for k+1
+
 
 
 
@@ -182,11 +209,15 @@ Proof by induction.
 Example: Prove that 3^n - 1 is even for all positive integers n.
 
 
-what does "even" mean? 
+what does "even" mean? divisible by 2
 
 
 
 Proof by induction.
+base case. we must prove that our claim holds for the smallest integer n = 1.
+we have that 3^1 -1 = 2 two is even
+
+Inductive 
 
 
 
