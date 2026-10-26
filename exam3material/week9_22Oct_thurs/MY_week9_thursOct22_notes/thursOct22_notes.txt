@@ -217,7 +217,9 @@ Proof by induction.
 base case. we must prove that our claim holds for the smallest integer n = 1.
 we have that 3^1 -1 = 2 two is even
 
-Inductive 
+Inductive step
+    we Assume the imductive hypothesis that 3^k -1 is even for some fixed positive integer k
+    We must prove that 3(k+1) -1 is also even
 
 
 
