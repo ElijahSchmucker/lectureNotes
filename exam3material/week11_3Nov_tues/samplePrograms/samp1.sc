@@ -11,3 +11,4 @@ var x: Z = Z.prompt("Enter a number: ")
 x = x + 1
 
 println("One more is ", x)
+print($"")
