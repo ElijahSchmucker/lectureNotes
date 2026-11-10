@@ -49,13 +49,16 @@ Contract(
 )
 
 
-Requires/preconditions:
+Requires/preconditions: Assumptions we need to make 
 
 
 
 ///
 
-Ensures/postconditions:
+Ensures/postconditions: results the function should have
+    explains the value being returned 
+
+    Rez[Z] 
 
 
 
@@ -81,23 +84,25 @@ Example: tickets.sc
 Four steps:
 
 1) What should be done before calling the function?
+    Prove all its preconditions about what we are passing as the parameters
 
 
 
 
 2) What can the function itself do with the preconditions?
-
+    The function must use the preconditions as premises.
 
 
 
 3) What must the function do with the postconditions?
+    Prove all the post conditions hold
 
 
 
 
 4) What can the calling code do with the postcondition after
     the function returns? 
-
+    list each post condition as a premise
 
 
 
