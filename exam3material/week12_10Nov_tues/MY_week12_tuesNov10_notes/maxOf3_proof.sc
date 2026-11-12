@@ -76,6 +76,7 @@ if (a >= b) {
   //summary block
   Deduce(
     //what goes here?
+    1 (result == 6) by Premise,
   )
 }
 
