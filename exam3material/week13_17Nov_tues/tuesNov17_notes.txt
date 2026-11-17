@@ -3,7 +3,8 @@ HW 10 due tonight
 
 Exam 3 is Thursday, November 19
 
-Drake and Rachel have an Exam 3 review session Wednesday, November 18 from 1:00-3:20 pm in DUE 1118
+Drake and Rachel have an Exam 3 review session:
+    Wednesday, November 18 from 1:00-3:20 pm in DUE 1118
 
 //////////////////////////////
 
@@ -17,6 +18,7 @@ Today:
 Reminder: loop invariant(s)
 
 //what do we need here?
+//prove the invariants all hold here (before loop begins)
 
 while (condition) {
     Invariant(
@@ -27,11 +29,16 @@ while (condition) {
     )
 
     //what can we to do here?
+    //list each invariant as a premise
 
     //what do we need to do here?
+    //prove that each invariant is true here (at the end of the iteration)
 }
 
 //how to prove the postcondition?
+!(condition)
+each invariant (all as premises)
+
 
 ////////////////////////
 
@@ -80,9 +87,20 @@ Topics:
 - Programming logic, including:
     - assumes and asserts
     - Subst and Algebra
+
+        m (claim that I'm rewriting)
+        n ( LHS == RHS )
+
+        Subst_<(n, m) rewriting the claim by replacing all LHS with RHS
+        Subst_>(n, m) rewriting the claim by replacing all RHS with LHS
+
+        5 > 0 by Algebra
     - Verifying programs with:
         - Variable assignments/expressions/updates
         - If/else statements
+            claim1 V claim2 by Premise
+                just need claim1 from if
+                and claim2 from else
         - Functions (plus recursive functions and calling functions)
         - Loops
     - Function contracts (meaning of preconditions/postconditions)
